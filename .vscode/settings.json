@@ -44,6 +44,12 @@
         "xutility": "cpp",
         "string": "cpp",
         "vector": "cpp",
-        "xhash": "cpp"
+        "xhash": "cpp",
+        "list": "cpp",
+        "map": "cpp",
+        "unordered_map": "cpp",
+        "xtree": "cpp",
+        "algorithm": "cpp",
+        "deque": "cpp"
     }
 }
