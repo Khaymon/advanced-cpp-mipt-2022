@@ -4,6 +4,8 @@
 #include <stack>
 using namespace std;
 
+using bool_table = std::vector<std::vector<bool>>;
+
 class Solution {
     const int BOARD_SIZE = 9;
 
@@ -13,10 +15,10 @@ class Solution {
     
 public:
     void solveSudoku(vector<vector<char>>& board) {
-        std::vector<std::vector<bool>> can_place(BOARD_SIZE, std::vector<bool>(BOARD_SIZE, false));
-        std::vector<std::vector<bool>> rows(BOARD_SIZE, std::vector<bool>(BOARD_SIZE + 1, true));
-        std::vector<std::vector<bool>> columns(BOARD_SIZE, std::vector<bool>(BOARD_SIZE + 1, true));
-        std::vector<std::vector<bool>> squares(BOARD_SIZE, std::vector<bool>(BOARD_SIZE + 1, true));
+        bool_table can_place(BOARD_SIZE, std::vector<bool>(BOARD_SIZE, false));
+        bool_table rows(BOARD_SIZE, std::vector<bool>(BOARD_SIZE + 1, true));
+        bool_table columns(BOARD_SIZE, std::vector<bool>(BOARD_SIZE + 1, true));
+        bool_table squares(BOARD_SIZE, std::vector<bool>(BOARD_SIZE + 1, true));
 
         for (int i = 0; i < BOARD_SIZE; ++i) {
             for (int j = 0; j < BOARD_SIZE; ++j) {
@@ -33,8 +35,6 @@ public:
             }
         }
 
-        
-        
         std::stack<std::pair<int, int>> positions;
         
         int x = 0;
